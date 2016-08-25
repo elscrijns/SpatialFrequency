@@ -1,6 +1,5 @@
 % Import the data from each session and calculate the summary of performance stored in Results
 %
-% Created by Christophe Bossens
 % Edited by Els Crijns
 %
 % Last edited on 23-08-2016
@@ -9,8 +8,8 @@ clc;clear all;
 
 %% Import data: .csv files created by SF1_extractData.m
 
-Dir = 'E:\Spatial_Frequency_Range 18-08-2016\Data Extracted\';
-filenames = dir([Dir '*.csv']);
+Dir = 'E:\yourDirectoryPath\';      % Path to the extracted data 
+filenames = dir([Dir '*.csv']);     % Each file contains 1 session
 filenames.name;
 
 %% for every file a results table is created containing Performance and significance
@@ -63,6 +62,7 @@ for i = 1:n
     
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     % Add the Spatial Frequencies in cpd based on schedule name
+    % Debug needed
    
     if strcmp(DATA.Schedule(1), 'Generalization Training 2') || strcmp(DATA.Schedule(1), 'Generalization Training 1')
         Results.SpatialFrequency(3) = 0.06;
