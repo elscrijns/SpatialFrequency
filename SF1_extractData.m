@@ -4,11 +4,21 @@
 % Edited by Els Crijns
 %
 % Last edited on 23-08-2016
+
+% CSV file from ABET contains 1 row per session with following columns:
+% COL1 : Time at which the trial was started 
+% COL2 : trial index
+% COL3 : Pair index
+% COL4 : Position of the response (one: left, two : right) 
+% COL5 : Position of the correct stimulus (one: left, two : right)
+% COL6 : correct response (zero: no, one: yes)
+% COL7 : Correction trial (zero: no, one : yes)
+
 %% Takes csv data from
 clc;clear all;
 
-filepath = 'E:\Spatial_Frequency_Range 18-08-2016\Data ABET\';
-filename = 'SF_training_2016-04-14.csv' 
+filepath = 'E:\yourDirectoryPath\'; % Enter your directory path
+filename = 'fileName.csv';          % Enter your filename (Exported form ABET)
     % File must be tab delimited (L 25) and have a dot as decimal separator (L 29)
 outputPath = 'E:\Spatial_Frequency_Range 18-08-2016\Data Extracted\';
 
