@@ -1,10 +1,5 @@
-%% Data can be loaded from a pre-generated matlab variables, containing the Results and Correction structures
-% These structures contain all relevant information per animal
-load('SFnew_CollectAll.mat')
-load('TC_CollectAll.mat')
-
 %% Read in the data per rat and organize per measure: 1 datapoint for each SF
-Dir = 'E:\Temporal_Contiguity 01_06_2016\Collect_All\';
+Dir = 'E:\  ';
 fileNames = dir([Dir 'Results_*.csv ']);
 n = size(fileNames,1)
 
@@ -14,12 +9,8 @@ for i =  1:12
     DATA = readtable([Dir fileName],'Delimiter',',','Format',formatSpec, 'ReadVariableNames', true);
     DATA.Properties.VariableNames = {'Condition' , 'GroupCount' , 'Response' , 'RT', 'RewardTime', 'Time', 'ScreenPokes', 'FrontBeam', 'BackBeam' , 'RewardPokes', 'Date'};
 
-%    [C, Loc, ]  = unique(DATA.Condition, 'last');
     Results(i).name = fileName;
     Results(i).All = DATA;           % All training days
-%    Results(i).data = DATA(1:6,:);   % Only part of the data is included
-%     Results(i).PD1 = DATA(1:6,:);
-%     Results(i).PD2 = DATA(7:12,:);
 end
 
 clear Dir fileNames n C Loc formatSpec fileName i DATA
@@ -27,11 +18,6 @@ clear Dir fileNames n C Loc formatSpec fileName i DATA
 %% Read in the data per rat and organize per measure: 1 datapoint for each SF
 % Animals is a structure containing 'data' and 'All' with fillowing columns
 % {'Condition' , 'GroupCount' , 'Response' , 'RT', 'RewardTime', 'Time', 'ScreenPokes', 'FrontBeam', 'BackBeam' , 'RewardPokes', 'Date'}
-
-% Animals are devided into 3 groups based on their performance
-% group1 = [8,11];
-% group2 = [4,6,7];
-% group3 = [1,2,3,5,9,10,12];
 
 % Combining the data per SF for different measures 
 Response     = nan(6,12);
