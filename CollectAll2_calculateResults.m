@@ -14,27 +14,14 @@ clc;clear all;
 % Import data: .csv files created by CollectAl1l_extractData.m containing
 % session information
 
-Dir = 'E:\Temporal_Contiguity 01_06_2016\Collect_All\';
-subDir = 'Rat PD Generalization High 1\';
+Dir = 'E:\yourDirectory	'; % enter your directory
+subDir = 'ScheduleName\'; % When different schedules were used for the same experiment
 filenames = dir([Dir subDir '*.csv']);
 filenames.name;
 n = size(filenames,1) % Number of files in subDir
 
 %% for every file a results table is created containing performance level and significance
- 
     
-% Can be used to define the stimulus identity based on the schedule (subDir)
-
-        % if length(subDir) == 41
-        %     SF1 = str2num(subDir([36 37])) /100;
-        %     SF2 = str2num(subDir([39 40])) /100;
-        %     SP3 = 0000;
-        % else 
-        %     SF1 = 0.015;
-        %     SF2 = 0.03;
-        %     SF3 = 0.06;
-        % end
-
 for i = 1:n
    
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
