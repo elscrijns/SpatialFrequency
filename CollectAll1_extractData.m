@@ -28,8 +28,8 @@
 clc;clear all;
 
 %adjust filename and location:
-filename = 'TC_CollectAll.csv';
-filepath = 'C:\Users\u0105250\Documents\Temporal_Contiguity 01_04_2016\Collect_All\';
+filename = 'fileName.csv';              % enter your filename (Exported for ABET)
+filepath = 'C:\yourDirectoryPath\';     % enter the path to your directory
 
 outputPath = 'C:\Users\u0105250\Documents\Temporal_Contiguity 01_04_2016\Collect_All\';
     useExcel = 0;
